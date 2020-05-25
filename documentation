@@ -6,3 +6,11 @@ Steps:
 - Go the project folder
 npm install
 node app
+
+APIs:
+- /create : Create the SMS template
+- /getAllTemplates : List all the templates from the MongoDB
+- /getTemplateByID/:id : Get a particular template by passing its id
+- /deleteByID/:id : Delete a template from MongoDB
+- /update/:id : Upate a template
+- /createDynamicSMS/:id : Create dynamic SMS. If the dynamic text is a url, shorten the url and send the shortend url as response
