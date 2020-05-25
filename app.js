@@ -4,7 +4,6 @@ const cors = require('cors');
 const http = require('http');
 const app = express();
 const main = require('./main');
-const validator = require('validator');
 
 app.use(bodyParser.json());
 app.use(cors());

@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 var TinyURL = require('tinyurl');
+const validator = require('validator');
 const url = 'mongodb://localhost:27017/mydb';
 
 function createSMSTemplate(smsTemplate, callback) {
