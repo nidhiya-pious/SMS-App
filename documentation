@@ -1,0 +1,8 @@
+Prerequisites:
+- NodeJS
+- MongoDB 
+Steps:
+- Clone the project
+- Go the project folder
+npm install
+node app
