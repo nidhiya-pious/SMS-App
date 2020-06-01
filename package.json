@@ -1,0 +1,29 @@
+{
+  "name": "sms-app",
+  "version": "1.0.0",
+  "description": "create,read,update and delete sms templates",
+  "main": "app.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nidhiya172/SMS-App.git"
+  },
+  "author": "nidhiya172",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nidhiya172/SMS-App/issues"
+  },
+  "homepage": "https://github.com/nidhiya172/SMS-App#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.7",
+    "shortid": "^2.2.15",
+    "tinyurl": "^1.1.5",
+    "url-hash": "^1.0.2",
+    "valid-url": "^1.0.9",
+    "validator": "^13.0.0"
+  }
+}

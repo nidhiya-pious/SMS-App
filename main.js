@@ -1,6 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-var TinyURL = require('tinyurl');
-const validator = require('validator');
+const validUrl = require('valid-url');
 const url = 'mongodb://localhost:27017/mydb';
 
 function createSMSTemplate(smsTemplate, callback) {
@@ -87,17 +86,19 @@ function updateTemplate(id, template, callback) {
     });
 }
 
-function createDynamicText(id, name,  callback) {
+function createDynamicText(id, urlBody,  callback) {
     MongoClient.connect(url, {useNewUrlParser:true}, function(err, client) {
         var db = client.db('mydb');
+       
 
-        if(validator.isURL(name)) {
-        TinyURL.shorten(name, function(res, err) {
-            if (err)
-                throw err;
-            callback(res);
-            
-        });
+        if (validUrl.isUri(urlBody.name)) {
+            try {
+                db.collection('URL').insertOne({urlBody});
+                callback(urlBody);
+                
+            } catch (err) {
+                res.send("Server error");
+            }
         }
         else {
         db.collection('SMS').findOne({ID: id},(err,result) => {
@@ -106,7 +107,7 @@ function createDynamicText(id, name,  callback) {
                 throw err;
             }
            
-            callback(result.Template + " " + name);
+            callback(result.Template + " " + urlBody.name);
         });
     }
 
