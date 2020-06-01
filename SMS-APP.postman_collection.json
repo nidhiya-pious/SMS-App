@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "3c2465fc-35d0-4049-b88b-e794a8c74d8d",
+		"name": "SMS-APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5\",\n\t\"template\": \"Hi\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/create",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTemplates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/getAllTemplates",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"getAllTemplates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTemplateByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/getTemplateByID/5",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"getTemplateByID",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTemplate",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/deleteByID/5",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"deleteByID",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"template\": \"Hello\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/update/5",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dynamic",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/createDynamicSMS/5?name=Nidhiya",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"createDynamicSMS",
+						"5"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Nidhiya"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
